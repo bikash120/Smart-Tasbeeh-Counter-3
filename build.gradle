@@ -1,0 +1,11 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.google.gms.services) apply false // এটি এখন libs.versions.toml থেকে আসবে
+    // alias(libs.plugins.kotlin.android) apply false // যদি Kotlin ব্যবহার করেন এবং toml ফাইলে alias যোগ করেন
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
